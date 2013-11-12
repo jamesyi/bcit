@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+<script type="text/javascript" src="flippy.js"></script>
+
+
+<script type="text/javascript" src="iscroll.js"></script>
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".albumthumb").mouseenter(function() {
+        $(this).flippy({
+            content : "<div id='nowplaying'></div>",
+           
+            onStart : function() {
+                
+            },
+            onFinish : function() {
+                
+            }
+        });
+    });
+});
+
+$(document).ready(function(){
+
+
+
+  $('img').dblclick(function(){
+	  var src = $(this).attr('src');
+	  console.log(src);
+	  $('#imgblur').attr('src',src);
+  });
+  
+  $('img').dblclick(function(){
+	  var src = $(this).attr('alt');
+	  console.log(src);
+	  $(".audio").attr('src',src);
+	  /*$('#music').html('src','url('+src+')');*/
+  });
+  
+  
+  /*$('img').click(function(){
+                var myAudio=$(".audio");     
+                var audioSub = myAudio.get(0); 
+  
+                    myAudio.attr('src','+src+');
+  });*/
+  
+});
+
+</script>
+
+<script type="text/javascript">
+
+var myScroll;
+function loaded() {
+	myScroll = new iScroll('scroll',
+	{
+		hideScrollbar:true,
+		hScroll:true, 
+        bounce:true,
+        lockDirection:true,
+	
+	});
+	
+}
+
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+document.addEventListener('DOMContentLoaded', loaded, false);
+
+</script>
+<body background="">
+
+
+
+
+
+<!--<div id="bg">
+<img id='bgimg' src="background.jpg"/>-->
+<div id="scroll">
+	 
+<table id="tbl">
+  <tr>
+  	<td><img alt="music/1.mp3" class="albumthumb" src="images/2.jpg"/></td>
+    <td><img alt="music/5.mp3" class="albumthumb" src="images/5.jpg"/></td>
+    <td><img class="albumthumb" src="images/10.jpg"/></td>
+    <td><img class="albumthumb" src="images/3.jpg"/></td>
+    <td><img class="albumthumb" src="images/18.jpg"/></td>
+    <td><img class="albumthumb" src="images/4.jpg"/></td>
+    <td><img class="albumthumb" src="images/9.jpg"/></td>
+    <td><img class="albumthumb" src="images/7.jpg"/></td>
+    <td><img alt="music/5.mp3" class="albumthumb" src="images/5.jpg"/></td>
+    <td><img class="albumthumb" src="images/1.jpg"/></td>
+    <td><img alt="music/6.mp3" class="albumthumb" src="images/6.jpg"/></td>
+    <td><img class="albumthumb" src="images/15.jpg"/></td>
+    <td><img class="albumthumb" src="images/14.jpg"/></td>
+    <td><img class="albumthumb" src="images/16.jpg"/></td>
+    <td><img alt="music/12.mp3" class="albumthumb" src="images/12.jpg"/></td>
+    <td><img class="albumthumb" src="images/11.jpg"/></td>
+  </tr>
+  <tr>
+    <td><img alt="music/6.mp3" class="albumthumb" src="images/6.jpg"/></td>
+    <td><img class="albumthumb" src="images/3.jpg"/></td>
+    <td><img class="albumthumb" src="images/4.jpg"/></td>
+    <td><img alt="music/5.mp3" class="albumthumb" src="images/5.jpg"/></td>
+    <td><img alt="music/6.mp3" class="albumthumb" src="images/6.jpg"/></td>
+    <td><img class="albumthumb" src="images/7.jpg"/></td>
+    <td><img class="albumthumb" src="images/8.jpg"/></td>
+    <td><img class="albumthumb" src="images/9.jpg"/></td>
+    <td><img class="albumthumb" src="images/11.jpg"/></td>
+    <td><img class="albumthumb" src="images/10.jpg"/></td>
+    <td><img alt="music/12.mp3" class="albumthumb" src="images/12.jpg"/></td>
+    <td><img class="albumthumb" src="images/13.jpg"/></td>
+    <td><img class="albumthumb" src="images/16.jpg"/></td>
+    <td><img class="albumthumb" src="images/18.jpg"/></td>
+    <td><img class="albumthumb" src="images/17.jpg"/></td>
+    <td><img class="albumthumb" src="images/11.jpg"/></td>
+  </tr>
+  <tr>
+   	<td><img alt="music/12.mp3" class="albumthumb" src="images/12.jpg"/></td>
+    <td><img class="albumthumb" src="images/11.jpg"/></td>
+    <td><img class="albumthumb" src="images/15.jpg"/></td>
+    <td><img class="albumthumb" src="images/13.jpg"/></td>
+    <td><img class="albumthumb" src="images/14.jpg"/></td>
+    <td><img class="albumthumb" src="images/8.jpg"/></td>
+    <td><img class="albumthumb" src="images/9.jpg"/></td>
+    <td><img class="albumthumb" src="images/2.jpg"/></td>
+    <td><img class="albumthumb" src="images/3.jpg"/></td>
+    <td><img alt="music/5.mp3" class="albumthumb" src="images/5.jpg"/></td>
+    <td><img class="albumthumb" src="images/7.jpg"/></td>
+    <td><img class="albumthumb" src="images/8.jpg"/></td>
+    <td><img class="albumthumb" src="images/10.jpg"/></td>
+    <td><img class="albumthumb" src="images/1.jpg"/></td>
+    <td><img class="albumthumb" src="images/7.jpg"/></td>
+    <td><img alt="music/6.mp3" class="albumthumb" src="images/6.jpg"/></td>
+  </tr>
+  
+</table>
+</div>
+<div id="bg">
+  <img id="imgblur" src="background.jpg" alt="">
+
+</div>
+
+
+<center>
+<div id="audiodiv">
+<audio class="audio" autoplay >
+ 
+  <source id="music" src="" type="audio/mpeg">
+
+</audio>
+
+</div>
+</center>
+<!--</div>-->
+
+</body>
+</html>
